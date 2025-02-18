@@ -1,0 +1,77 @@
+/* ModalPrompt.css 
+Modal overlay styles*/
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+
+  /* 
+  
+  A container with a white background, border, and padding.
+*/
+  .modal-content {
+    background: #ffffff;
+    border: 2px solid #343148;
+    border-radius: 8px;
+    padding: 1rem 2rem;
+    min-width: 300px;
+    text-align: center;
+    color: #343148; /* Ensure text is dark */
+  }
+  
+  /* Header styles inside the modal */
+  .modal-content h3 {
+    margin: 0 0 1rem 0;
+    color: #343148;
+  }
+  /* Label styling inside the modal */
+  .modal-content label {
+    display: block;
+    margin: 0.5rem 0 0.25rem 0;
+    font-weight: bold;
+    color: #343148;
+  }
+  /* Input field styling inside the modal */
+  .modal-content input {
+    width: 90%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid #343148;
+    border-radius: 4px;
+    color: #343148;
+  }
+  
+
+  /*  Modal buttons container:*/
+  .modal-buttons {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  /* Button styles for modal buttons */
+  .modal-buttons button {
+    background-color: #D7C49E;
+    color: #343148;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  /* Hover effect for modal buttons */
+  .modal-buttons button:hover {
+    background-color: #343148;
+    color: #D7C49E;
+  }
+  

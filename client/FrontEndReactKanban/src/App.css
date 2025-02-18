@@ -1,0 +1,98 @@
+/*Basic styles for all components */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #222; 
+  color: #fff;           
+}
+
+/* Top-level container */
+.App {
+  padding: 1rem;
+}
+
+/* Headers */
+h1, h2 {
+  margin: 0 0 1rem;
+}
+
+.app-header {
+  background: #333;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.board-actions button {
+  margin-right: 8px;
+}
+
+/* Kanban layout */
+.kanban-container {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+}
+
+/* Columns */
+.column {
+  min-width: 250px;
+  background: #9c9494;
+  color: #000;
+  border-radius: 4px;
+  padding: 1rem;
+  position: relative;
+}
+
+.column-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.column-footer {
+  margin-top: 8px;
+  text-align: right;
+}
+
+.column h3 {
+  margin: 0;
+}
+
+/* Cards */
+.card {
+  background: #f0efef;
+  border: 1px solid #e9e0e0;
+  border-radius: 4px;
+  color: #000;
+  padding: 20px;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.card h4 {
+  margin: 0 0 4px 0;
+}
+
+.card p {
+  margin: 0;
+}
+
+/* Buttons */
+button {
+  background-color: #444;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 8px;
+  cursor: pointer;
+  margin: 4px 4px 4px 0;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: #666;
+}

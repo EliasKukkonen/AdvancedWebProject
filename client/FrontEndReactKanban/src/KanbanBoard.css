@@ -1,0 +1,470 @@
+/* Navigation Bar */
+.navbar {
+  background-color: #343148;               
+  color: #D7C49E;                         
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid #D7C49E;        
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+/* Navigation bar left and right sides*/
+.navbar-left,
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/*Search input */
+.navbar-search-input {
+  padding: 0.25rem 0.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  /* For mobile, width is adjusted below */
+}
+
+/* Buttons in the navbar */
+.navbar-search-btn,
+.navbar-btn {
+  background-color: #D7C49E;              
+  color: #343148;                         
+  border: none;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/*Hover for the search button in the nav bar */
+.navbar-search-btn:hover,
+.navbar-btn:hover {
+  background-color: #343148;              
+  color: #D7C49E;
+}
+
+/* Top-level board container */
+.kanban-board {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+}
+
+/* Desktop board: allow columns to size by content */
+.kanban-board.desktop {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: flex-start; 
+}
+
+/* Mobile board */
+.kanban-board.mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+/* Column styles */
+.column {
+  background: #ffffff;                     
+  border-radius: 8px;
+  width: 280px;
+  padding: 1rem;
+  margin: 0 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  touch-action: none; 
+}
+
+/* Column drag handle */
+.column-drag-handle {
+  background-color: #343148;             
+  color: #D7C49E;                         
+  border-radius: 4px;
+  padding: 0.5rem;
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  touch-action: none;
+}
+
+/*Delete button in the column */
+.delete-column-btn{
+  background-color: #D7C49E;
+  color: #343148;
+  border: none;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+
+/*Column drag handle */
+.column-drag-handle .drag-icon {
+  font-size: 1.2rem;
+}
+
+/* Column title area */
+.column-title {
+  cursor: text;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #343148;                         
+  border-bottom: 1px dashed #D7C49E;        
+  padding: 0.25rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Input field for column title*/
+.column-title input {
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Column buttons */
+.column-btns {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  justify-content: center; 
+  align-items: center; 
+  
+}
+
+/*Buttons style */
+.column-btns button {
+  background-color: #D7C49E;  ;              
+  color: #343148;                      
+  border: none;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+
+/*Hover for the button */
+.column-btns button:hover {
+  background-color: #D7C49E;              
+  color: #343148;
+}
+
+/* Add Card button */
+.add-card-btn {
+  background-color: #D7C49E;              
+  color: #343148;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  margin-bottom: 1rem;
+}
+
+
+/*Hover for the add card button */
+.add-card-btn:hover {
+  background-color: #343148;
+  color: #D7C49E;
+}
+
+/* Cards container */
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex-grow: 1;
+  background-color: #D7C49E;              
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+/* Card styles */
+.card {
+  background: #ffffff;
+  border-radius: 4px;
+  padding: 0.75rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  cursor: grab;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  touch-action: none;
+}
+
+/*Hover for the cards */
+.card:hover {
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Card drag handle */
+.card-drag-handle {
+  background-color: #343148;              
+  color: #D7C49E;                         
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  cursor: grab;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  touch-action: none;
+}
+
+/*Card drag handle style */
+.card-drag-handle .drag-icon {
+  font-size: 1rem;
+}
+
+/* Card content area */
+.card-content {
+  cursor: text;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/*Card Title */
+.card-content h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #343148;                         
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+
+/*Card description */
+.card-content p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #495057;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+
+/*Card input area */
+.card-content input,
+.card-content textarea {
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.25rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+/* Card controls */
+.card-controls {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+
+/*Color */
+.card-controls input[type="color"] {
+  border: none;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+/* Generic button style */
+button {
+  background-color: #D7C49E;
+  color: #343148;
+  border: none;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/*Hover for the button */
+
+button:hover {
+  background-color: #343148;
+  color: #D7C49E;
+}
+
+/* Responsive adjustments for the nav bar */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-left,
+  .navbar-right {
+    width: 100%;
+    justify-content: center;
+    margin: 0.5rem 0;
+  }
+
+  .navbar-search-input {
+    width: 80%;
+  }
+}
+
+
+/*Change color button */
+.color-picker {
+  appearance: none;            
+  -webkit-appearance: none;    
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;          
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.color-picker:hover {
+  transform: scale(1.1);
+}
+
+.color-picker:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #343148;
+}
+
+
+/* Container for the entire comments list */
+.comments-container {
+  margin-top: 12px;
+  padding: 10px;
+  background: #D7C49E;
+  border-radius: 6px;
+  max-width: 100%; 
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Style for each individual comment */
+.comment-item {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  max-width: 100%; 
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Comment text */
+.comment-text {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 4px;
+  white-space: pre-wrap; 
+  word-break: break-word; 
+}
+
+/* Footer containing date and delete button */
+.comment-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; 
+}
+
+/* Comment date */
+.comment-date {
+  font-size: 0.8rem;
+  color: #6c757d;
+  flex-grow: 1; 
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Delete button for comment */
+.comment-delete-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.comment-delete-btn:hover {
+  background: #c82333;
+}
+
+/* Comment input field and Add button */
+.comment-input-container {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%; 
+}
+
+/* Input field for comment */
+.comment-input {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%; 
+  max-width: calc(100% - 80px); 
+}
+
+/* Add button in the comment */
+.comment-add-btn {
+  background: #343148; 
+  color: #D7C49E;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  min-width: 70px; 
+  text-align: center;
+}
+
+/*Comment add button and hover effect */
+.comment-add-btn:hover {
+  background: #343148; 
+}
+
+/* Responsive display */
+@media (max-width: 480px) {
+  .comment-input-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .comment-input {
+    max-width: 100%;
+  }
+
+  .comment-add-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+

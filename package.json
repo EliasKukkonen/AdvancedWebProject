@@ -1,0 +1,24 @@
+{
+  "name": "projectadvancedfinal",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:client": "cross-env NODE_ENV=development cd client/FrontEndReactKanban && npm run dev",
+    "dev:server": "cross-env NODE_ENV=development tsc-watch -p ./server/tsconfig.json --onSuccess \"node server/dist/server.js\"",
+    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
+    "build:client": "cd client/FrontEndReactKanban && npm install && npm run build",
+    "build:server": "cd server && npm install && tsc",
+    "build": "npm run build:client && npm run build:server",
+    "start": "cross-env NODE_ENV=production node server/dist/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "cross-env": "^7.0.3",
+    "tsc-watch": "^6.2.1"
+  }
+}
