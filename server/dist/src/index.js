@@ -53,7 +53,7 @@ router.post('/login', async (req, res) => {
         if (!match) {
             return res.status(400).json({ message: 'Invalid credentials.' });
         }
-        //Token expires in the 5h
+        //Token expires in the 1h
         const token = jsonwebtoken_1.default.sign({ userId: user._id }, process.env.SECRET, {
             expiresIn: '1h'
         });

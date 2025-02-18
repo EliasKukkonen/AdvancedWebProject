@@ -4,9 +4,15 @@ import { useEffect, useState } from 'react';
 import AuthPage from './AuthPage';
 import KanbanBoard from './KanbanBoard';
 import './App.css';
+import {jwtDecode} from 'jwt-decode';
 
 
  //Main component, decides to show the auhtetntication screen
+
+ interface JwtPayload {
+  exp: number;
+  // Add other properties if needed.
+}
 
 function App() {
 
@@ -15,10 +21,22 @@ function App() {
 
   //Store authentication token
   useEffect(() => {
-    // Check if a token is already in localStorage
     const storedToken = localStorage.getItem('token');
     if (storedToken) {
-      setToken(storedToken);
+      try {
+        const decoded = jwtDecode<JwtPayload>(storedToken);
+        // Check if token is expired
+        if (decoded.exp * 1000 < Date.now()) {
+          localStorage.removeItem('token');
+          setToken(null);
+        } else {
+          setToken(storedToken);
+        }
+      } catch (error) {
+        // If token is invalid, remove it
+        localStorage.removeItem('token');
+        setToken(null);
+      }
     }
   }, []);
 

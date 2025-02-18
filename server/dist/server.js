@@ -17,7 +17,7 @@ const app = (0, express_1.default)();
 // Use the environment PORT if available, otherwise default to 3000
 const port = parseInt(process.env.PORT) || 3000;
 // Connect to MongoDB
-const mongoDB = "mongodb://127.0.0.1:27017/testdb";
+const mongoDB = "mongodb://127.0.0.1:27017/KanBanDb";
 mongoose_1.default.connect(mongoDB);
 mongoose_1.default.Promise = Promise;
 const db = mongoose_1.default.connection;
