@@ -1,4 +1,4 @@
-// ModalPrompt.tsx
+
 import React, { useState } from "react";
 import "./ModalPrompt.css";
 import { useTranslation } from 'react-i18next';

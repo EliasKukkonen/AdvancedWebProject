@@ -1,4 +1,4 @@
-// ColumnComponent.tsx
+
 import React, { useState } from "react";
 //  Necessary functions and contexts for drag-and-drop
 import { useSortable, SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable";

@@ -13,7 +13,6 @@ dotenv.config({
 
 
 const app: Express = express();
-// Use the environment PORT if available, otherwise default to 3000
 const port: number = parseInt(process.env.PORT as string) || 3000;
 
 // Connect to MongoDB

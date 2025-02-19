@@ -1,4 +1,4 @@
-// models/Board.ts
+
 import { timeStamp } from "console";
 import { Schema, model, Document, Types } from "mongoose";
 

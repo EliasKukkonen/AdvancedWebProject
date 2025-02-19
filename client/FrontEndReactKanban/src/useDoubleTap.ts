@@ -2,7 +2,6 @@ import { useState } from 'react';
 
 
 //Hook to detect a double-tap or double-click event.
-//Function is working if two clicks occur within specific delay, here (300 ms)
 export function useDoubleTap(callback: () => void, delay: number = 300) {
   // State to store the timestamp of the last tap
   const [lastTap, setLastTap] = useState<number | null>(null);

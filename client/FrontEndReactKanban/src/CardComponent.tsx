@@ -1,4 +1,4 @@
-// CardComponent.tsx
+
 import React, { useState } from "react";
 import { useSortable } from "@dnd-kit/sortable"; // DND kit
 import { CSS } from "@dnd-kit/utilities"; // DND kit
@@ -95,6 +95,9 @@ const CardComponent: React.FC<CardProps> = ({
     }
     setIsEditingTitle(false);
   };
+
+  const longPressTimer = React.useRef<number | null>(null);
+const isMobile = typeof window !== "undefined" && "ontouchstart" in window;
 
   // Function to finish editing card description and call API
   const finishEditingDescription = () => {
@@ -361,7 +364,31 @@ const CardComponent: React.FC<CardProps> = ({
                   setEditingCommentId(com._id);
                   setEditingCommentText(com.text);
                 }}
+                //Long hold for the comment editing if in mobile mode.
+                onTouchStart={
+                  isMobile && editingCommentId !== com._id
+                    ? (e) => {
+                        e.stopPropagation();
+                        longPressTimer.current = window.setTimeout(() => {
+                          setEditingCommentId(com._id);
+                          setEditingCommentText(com.text);
+                        }, 500);
+                      }
+                    : undefined
+                }
+                onTouchEnd={
+                  isMobile && editingCommentId !== com._id
+                    ? (e) => {
+                        e.stopPropagation();
+                        if (longPressTimer.current) {
+                          clearTimeout(longPressTimer.current);
+                          longPressTimer.current = null;
+                        }
+                      }
+                    : undefined
+                }
               >
+               {/* Comments and input */}
                 <div className="comment-text">
                   {editingCommentId === com._id ? (
                     <input

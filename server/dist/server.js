@@ -14,7 +14,6 @@ dotenv_1.default.config({
     path: path_1.default.join(__dirname, '..', '..', '.env'),
 });
 const app = (0, express_1.default)();
-// Use the environment PORT if available, otherwise default to 3000
 const port = parseInt(process.env.PORT) || 3000;
 // Connect to MongoDB
 const mongoDB = "mongodb://127.0.0.1:27017/KanBanDb";
